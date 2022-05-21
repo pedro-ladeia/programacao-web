@@ -1,0 +1,28 @@
+section {
+    width: 60%;
+    height: 112vh;
+
+    padding-top: 3rem;
+
+    background-color: #e7e7e7;
+
+    margin: auto;
+}
+section input{
+    margin-left: 1rem;
+}
+section img {
+    width: 18rem;
+    border-radius: 100%;
+    margin-left: 31%;
+    margin-bottom: 5rem;
+}
+section div {
+    width: 50%;
+    height: 4rem;
+
+    background-color: #fff;
+    margin: auto;
+    margin-top: 3rem;
+}
+
