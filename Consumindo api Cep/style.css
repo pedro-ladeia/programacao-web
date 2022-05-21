@@ -1,0 +1,16 @@
+section {
+    width: 90%;
+    height: 70vh;
+
+    background-color: #e7e7e7;
+}
+
+section div {
+    width: 50%;
+    height: 4rem;
+
+    background-color: #fff;
+
+    margin-top: 2rem;
+}
+
