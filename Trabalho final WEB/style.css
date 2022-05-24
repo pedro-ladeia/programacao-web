@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#sec1 {
+    width: 90%;
+    height: 94vh;
+
+    margin: auto;
+    margin-top: 1.2rem;
+    
+    background-color: #e7e7e7;
+    color: #000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 10px 10px 0 0;
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+#sec1 h1 {
+    font-size: 40pt;
+    padding-top: 1rem;
+}
+
+#sec1 .choiceNumPLayersWrapper {
+    
+    width: 60%;
+    margin-top: 4rem;   
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+
+}
+
+#sec1 .choiceNumPLayersWrapper .choiceNumPLayers {
+    padding: 1rem;
+
+    background-color: transparent;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    box-shadow: inset 0 0 0 0 transparent;
+
+    transition: .5s ease all;
+
+    font-size: 28pt;
+}
+
+#sec1 .choiceNumPLayersWrapper .choiceNumPLayers:hover {
+    box-shadow: inset 0 4.7rem 0 0 #000;
+    color: #fff;
+}
+
+#sec1 .mainWrapper {
+    background-color: #000;
+    color: #fff;
+
+    margin-top: 3rem;
+    padding: 1rem;
+
+    width: 60rem;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 10px;
+
+    opacity: 0;
+
+    transition: 1s ease all;
+}
+
+#sec1 .mainWrapper .mainNumberWrapper h1 {
+    font-size: 70pt;
+
+    transition: 1s ease all;
+}
+
+
+#sec1 .mainWrapper .playerWrapper .playernNumChoiced {
+    padding: 1rem;
+
+    font-size: 18pt;
+
+    border-radius: 10%;
+
+    margin-top: 1rem;
+
+    cursor: pointer;
+
+    background-color: #e7e7e7;
+
+    box-shadow: inset 0 0 0 0 #e7e7e7;
+
+    transition: .6s ease all;
+}
+
+#sec1 .mainWrapper .playerWrapper .playernNumChoiced:hover {
+    box-shadow: inset 0 4rem 0 0 #000;
+    color: #fff;
+}
+
+#sec1 .mainWrapper .playerWrapper .numOfGainsWrapper {
+    margin-top: 2rem;
+    display: flex;
+    width: 8rem;
+    justify-content: space-between;
+}
