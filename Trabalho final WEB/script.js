@@ -1,7 +1,10 @@
 let mainWrapper = document.querySelector('.mainWrapper')
 
+let secWrapper = document.querySelector('#sec1')
+
 let butTwoPlaying = document.querySelector('#twoPlayers')
 let butOnePlaying = document.querySelector('#onePlayer')
+let butRules = document.querySelector('.rulesPlayer')
 
 
 
@@ -43,6 +46,29 @@ let numVictoriesPlayer2 = document.querySelector('.numOfGainsPlayer2')
 
 
 
+
+// Creating the How to Play on the click of Button
+butRules.addEventListener('click', () => {
+    
+    let contentWrapper = document.createElement('div')
+
+    contentWrapper.style.transitionDuration = `1s`
+    contentWrapper.style.transform = `translate(0,3rem)`
+
+    let paragraphOne = document.createElement('h3')
+    paragraphOne.innerHTML = `--> O objetivo do jogo é chegar ao número 21, vence aquele que conseguir e  perde aquele que ultrapassar do 21.`
+    contentWrapper.appendChild(paragraphOne)
+
+    let paragraphTwo = document.createElement('h3')
+    paragraphTwo.innerHTML = `--> A dinâmica do jogo é baseada em turnos, cada jogar escolhe somar o número atual em +1, +2 ou +3.`
+    contentWrapper.appendChild(paragraphTwo)
+
+    let paragraphThree = document.createElement('h3')
+    paragraphThree.innerHTML = `--> Ex: O jogo começa com o número 0, o jogador 1 escolhe somar o 0 em +1, +2 ou +3, e então o turno passa a ser do jogador 2`
+    contentWrapper.appendChild(paragraphThree)
+
+    secWrapper.appendChild(contentWrapper)
+})
 
 
 // Boo if turn player1
@@ -442,77 +468,5 @@ numChoicedPlay3.addEventListener('click', () => {
     responseMachine()
     verifyMainNumber(mainNumber)
 })
-
-
-
-// Click Player 2
-
-/*
-numPlayer2ChoicedPlay1.addEventListener('click', () => {
-    
-    numChoicedPlay1.disabled = false
-    numChoicedPlay2.disabled = false
-    numChoicedPlay3.disabled = false
-
-    numPlayer2ChoicedPlay1.disabled = true
-    numPlayer2ChoicedPlay2.disabled = true
-    numPlayer2ChoicedPlay3.disabled = true
-
-    numChoicedPlay1.setAttribute('value', `${valueNumChoicedPlay1 += 1}`)
-    numChoicedPlay2.setAttribute('value', `${valueNumChoicedPlay2 += 1}`)
-    numChoicedPlay3.setAttribute('value', `${valueNumChoicedPlay3 += 1}`)
-    numPlayer2ChoicedPlay1.setAttribute('value', `${valueNumPlayer2ChoicedPlay1 += 1}`)
-    numPlayer2ChoicedPlay2.setAttribute('value', `${valueNumPlayer2ChoicedPlay2 += 1}`)
-    numPlayer2ChoicedPlay3.setAttribute('value', `${valueNumPlayer2ChoicedPlay3 += 1}`)
-    wrapperMainNumber.innerHTML = `${mainNumber += 1}`
-    wrapperMainNumber.style.fontSize = '70pt'
-    isTurnPlayer1 = false
-
-    verifyMainNumber(mainNumber)
-})
-
-numPlayer2ChoicedPlay2.addEventListener('click', () => {
-
-    numChoicedPlay1.disabled = false
-    numChoicedPlay2.disabled = false
-    numChoicedPlay3.disabled = false
-
-    numPlayer2ChoicedPlay1.disabled = true
-    numPlayer2ChoicedPlay2.disabled = true
-    numPlayer2ChoicedPlay3.disabled = true
-
-    numChoicedPlay1.setAttribute('value', `${valueNumChoicedPlay1 += 2}`)
-    numChoicedPlay2.setAttribute('value', `${valueNumChoicedPlay2 += 2}`)
-    numChoicedPlay3.setAttribute('value', `${valueNumChoicedPlay3 += 2}`)
-    numPlayer2ChoicedPlay1.setAttribute('value', `${valueNumPlayer2ChoicedPlay1 += 2}`)
-    numPlayer2ChoicedPlay2.setAttribute('value', `${valueNumPlayer2ChoicedPlay2 += 2}`)
-    numPlayer2ChoicedPlay3.setAttribute('value', `${valueNumPlayer2ChoicedPlay3 += 2}`)
-    wrapperMainNumber.innerHTML = `${mainNumber += 2}`
-    wrapperMainNumber.style.fontSize = '70pt'
-    isTurnPlayer1 = false
-    verifyMainNumber(mainNumber)
-})
-
-numPlayer2ChoicedPlay3.addEventListener('click', () => {
-
-    numChoicedPlay1.disabled = false
-    numChoicedPlay2.disabled = false
-    numChoicedPlay3.disabled = false
-
-    numPlayer2ChoicedPlay1.disabled = true
-    numPlayer2ChoicedPlay2.disabled = true
-    numPlayer2ChoicedPlay3.disabled = true
-    
-    numChoicedPlay1.setAttribute('value', `${valueNumChoicedPlay1 += 3}`)
-    numChoicedPlay2.setAttribute('value', `${valueNumChoicedPlay2 += 3}`)
-    numChoicedPlay3.setAttribute('value', `${valueNumChoicedPlay3 += 3}`)
-    numPlayer2ChoicedPlay1.setAttribute('value', `${valueNumPlayer2ChoicedPlay1 += 3}`)
-    numPlayer2ChoicedPlay2.setAttribute('value', `${valueNumPlayer2ChoicedPlay2 += 3}`)
-    numPlayer2ChoicedPlay3.setAttribute('value', `${valueNumPlayer2ChoicedPlay3 += 3}`)
-    wrapperMainNumber.innerHTML = `${mainNumber += 3}`
-    wrapperMainNumber.style.fontSize = '70pt'
-    isTurnPlayer1 = false
-    verifyMainNumber(mainNumber)
-})*/
 
 }
