@@ -5,21 +5,25 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+    background-color: #f7f7f7;
+}
+
 #sec1 {
     width: 90%;
-    height: 94vh;
+    height: 97vh;
 
     margin: auto;
-    margin-top: 1.2rem;
+    margin-top: .8rem;
     
-    background-color: #e7e7e7;
-    color: #000;
+    background-color: #f2fcfc;
+    color: #9736f7;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 10px 10px;
 
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
@@ -39,13 +43,40 @@
 
 }
 
-#sec1 .choiceNumPLayersWrapper .choiceNumPLayers {
+.choiceNumPLayersWrapper .rulesPlayer {
     padding: 1rem;
 
     background-color: transparent;
     border-radius: 10px;
 
+    border-color: #9736f7;
+
     cursor: pointer;
+
+    color: #9736f7;
+
+    box-shadow: inset 0 0 0 0 transparent;
+
+    transition: .5s ease all;
+
+    font-size: 28pt;
+}
+
+.choiceNumPLayersWrapper .rulesPlayer:hover {
+    box-shadow: inset 0 4.7rem 0 0 #9736f7;
+    color: #fff;
+}
+
+#sec1 .choiceNumPLayersWrapper .choiceNumPLayers {
+    padding: 1rem;
+
+    background-color: transparent;
+    border-radius: 10px;
+    border-color: #9736f7;
+
+    cursor: pointer;
+
+    color: #9736f7;
 
     box-shadow: inset 0 0 0 0 transparent;
 
@@ -55,18 +86,18 @@
 }
 
 #sec1 .choiceNumPLayersWrapper .choiceNumPLayers:hover {
-    box-shadow: inset 0 4.7rem 0 0 #000;
+    box-shadow: inset 0 4.7rem 0 0 #9736f7;
     color: #fff;
 }
 
 #sec1 .mainWrapper {
-    background-color: #000;
+    background-color: #9736f7;
     color: #fff;
 
     margin-top: 3rem;
     padding: 1rem;
 
-    width: 60rem;
+    width: 68rem;
 
     display: flex;
 
@@ -80,17 +111,63 @@
     transition: 1s ease all;
 }
 
+
+
 #sec1 .mainWrapper .mainNumberWrapper h1 {
     font-size: 70pt;
 
-    transition: 1s ease all;
+    
 }
 
+#sec1 .mainWrapper #playerWrapper2 {
+    display: flex;
+    flex-direction: column;
+}
+
+#sec1 .mainWrapper .playerWrapper .namePlayerWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20rem;
+}
+
+#sec1 .mainWrapper .playerWrapper .namePlayerWrapper .titlePlayer {
+    padding: .5rem;
+
+    color: #9736f7;
+    font-size: 12pt;
+
+    border-radius: 10px;
+}
+
+#sec1 .mainWrapper .playerWrapper .namePlayerWrapper .butEnterName {
+    padding: .6rem;
+
+    border-radius: 10%;
+
+    cursor: pointer;
+    
+    font-size: 14pt;
+
+    background-color: #9736f7;
+    color: #f2f2fc;
+
+    border-color: #f2fcfc;
+
+    box-shadow: inset 0 0 0 0 transparent;
+
+    transition: .6s ease all;
+}
+
+#sec1 .mainWrapper .playerWrapper .namePlayerWrapper .butEnterName:hover {
+    box-shadow: inset 0 4rem 0 0 #f2f2fc;
+    color: #9736f7;
+}
 
 #sec1 .mainWrapper .playerWrapper .playernNumChoiced {
     padding: 1rem;
 
-    font-size: 18pt;
+    font-size: 20pt;
 
     border-radius: 10%;
 
@@ -98,21 +175,29 @@
 
     cursor: pointer;
 
-    background-color: #e7e7e7;
+    border-color: #f2f2fc;
 
-    box-shadow: inset 0 0 0 0 #e7e7e7;
+    background-color: #9736f7;
+
+    color: #f2f2fc;
+
+    box-shadow: inset 0 0 0 0 transparent;
 
     transition: .6s ease all;
 }
 
 #sec1 .mainWrapper .playerWrapper .playernNumChoiced:hover {
-    box-shadow: inset 0 4rem 0 0 #000;
-    color: #fff;
+    box-shadow: inset 0 4rem 0 0 #f2f2fc;
+    color: #9736f7;
 }
 
 #sec1 .mainWrapper .playerWrapper .numOfGainsWrapper {
     margin-top: 2rem;
+    
     display: flex;
-    width: 8rem;
+    
+    width: 3rem;
+    
     justify-content: space-between;
+
 }
