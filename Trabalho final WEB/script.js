@@ -130,14 +130,15 @@ butRules.addEventListener('click', () => {
 
 
 // Boo if turn player1
-let isTurnPlayer1 = true
+
 
 butTwoPlaying.onclick = () => {
-
+    let isTurnPlayer1 = true
     butTwoPlaying.disabled = true
     contentWrapper.remove()
     mainWrapper.style.opacity = 1
     mainWrapper.style.transform = 'translate(0,3rem)'
+    namePlayersWrapper
 
     //Function verify if main number == 21 and turn player
     let verifyMainNumber = (mainNumber) => {
@@ -168,7 +169,7 @@ butTwoPlaying.onclick = () => {
             } else {
                 mainWrapper.style.width = '72rem'
                 wrapperMainNumber.style.fontSize = '44pt'
-                wrapperMainNumber.innerHTML = `Jogador 1 Venceu`
+                wrapperMainNumber.innerHTML = `${localStorage.getItem("namep1")} Venceu`
                 numVictoriesPlayer1.innerHTML = `${accVictoriesPLayer1 + 1}`
                 wrapperPlayer.appendChild(buttonPlayAgain)
             }
@@ -390,9 +391,16 @@ butTwoPlaying.onclick = () => {
 
 
 butOnePlaying.onclick = () => {
+    let isTurnPlayer1 = true
+    let pcName = document.createElement('h3')
+    pcName.innerHTML = `Computador`
     contentWrapper.remove()
     mainWrapper.style.opacity = 1
     mainWrapper.style.transform = 'translate(0,3rem)'
+    butRegisterNamePlayer2.remove()
+    namePlayer2.remove()
+    namePlayerWrapper2.appendChild(pcName)
+    namep2Wrapper.style.width = '10rem'
 
     //Function verify if main number == 21 and turn player
     let verifyMainNumber = (mainNumber) => {
@@ -400,30 +408,32 @@ butOnePlaying.onclick = () => {
         let accVictoriesPLayer2 = Number(numVictoriesPlayer2.innerHTML)
         if (mainNumber === 21) {
             if (isTurnPlayer1) {
-                mainWrapper.style.width = '66rem'
-                wrapperMainNumber.style.fontSize = '50pt'
-                wrapperMainNumber.innerHTML = `Jogador 1 Venceu`
-                numVictoriesPlayer1.innerHTML = `${accVictoriesPLayer1 + 1}`
+                mainWrapper.style.width = '72rem'
+                wrapperMainNumber.style.fontSize = '44pt'
+                wrapperMainNumber.innerHTML = `${localStorage.getItem("namep1")} Venceu`
+                numVictoriesPlayer1.innerHTML = `${accVictoriesPLayer1++ }`
                 wrapperPlayer.appendChild(buttonPlayAgain)
             } else {
-                mainWrapper.style.width = '66rem'
-                wrapperMainNumber.style.fontSize = '50pt'
-                wrapperMainNumber.innerHTML = `Máquina Venceu`
+                mainWrapper.style.width = '72rem'
+                sideAll.style.width = '13rem'
+                wrapperMainNumber.style.fontSize = '44pt'
+                wrapperMainNumber.innerHTML = `Computador Venceu`
                 numVictoriesPlayer2.innerHTML = `${accVictoriesPLayer2 + 1}`
                 wrapperPlayer.appendChild(buttonPlayAgain)
             }
 
         } else if (mainNumber > 21) {
             if (isTurnPlayer1) {
-                mainWrapper.style.width = '66rem'
-                wrapperMainNumber.style.fontSize = '50pt'
+                mainWrapper.style.width = '72rem'
+                sideAll.style.width = '13rem'
+                wrapperMainNumber.style.fontSize = '44pt'
                 wrapperMainNumber.innerHTML = `Computador Venceu`
                 numVictoriesPlayer1.innerHTML = `${accVictoriesPLayer2 + 1}`
                 wrapperPlayer.appendChild(buttonPlayAgain)
             } else {
-                mainWrapper.style.width = '66rem'
-                wrapperMainNumber.style.fontSize = '50pt'
-                wrapperMainNumber.innerHTML = `Jogador 1 Venceu`
+                mainWrapper.style.width = '72rem'
+                wrapperMainNumber.style.fontSize = '44pt'
+                wrapperMainNumber.innerHTML = `${localStorage.getItem("namep1")} Venceu`
                 numVictoriesPlayer1.innerHTML = `${accVictoriesPLayer1 + 1}`
                 wrapperPlayer.appendChild(buttonPlayAgain)
             }
@@ -450,7 +460,7 @@ butOnePlaying.onclick = () => {
 
 
     buttonPlayAgain.onclick = () => {
-        mainWrapper.style.width = '60rem'
+        mainWrapper.style.width = '68rem'
         wrapperMainNumber.innerHTML = `${mainNumber = 0}`
 
         valueNumChoicedPlay1 = 1
@@ -489,8 +499,9 @@ butOnePlaying.onclick = () => {
         numPlayer2ChoicedPlay2.setAttribute('value', `${valueNumPlayer2ChoicedPlay2 += valueMachine}`)
         numPlayer2ChoicedPlay3.setAttribute('value', `${valueNumPlayer2ChoicedPlay3 += valueMachine}`)
         isTurnPlayer1 = false
-        wrapperMainNumber.innerHTML = `${mainNumber += valueMachine}`
+        wrapperMainNumber.innerHTML = `${mainNumber += valueMachine}` 
         verifyMainNumber(mainNumber)
+        
     }
 
 
@@ -511,10 +522,8 @@ butOnePlaying.onclick = () => {
         wrapperMainNumber.innerHTML = `${mainNumber += 1}`
         wrapperMainNumber.style.fontSize = '70pt'
         isTurnPlayer1 = true
-        responseMachine()
         verifyMainNumber(mainNumber)
-
-
+        responseMachine()
     })
 
     numPlayer2ChoicedPlay1.disabled = true
@@ -555,7 +564,7 @@ butOnePlaying.onclick = () => {
         wrapperMainNumber.innerHTML = `${mainNumber += 3}`
         wrapperMainNumber.style.fontSize = '70pt'
         isTurnPlayer1 = true
-        responseMachine()
         verifyMainNumber(mainNumber)
+        responseMachine()
     })
 }
